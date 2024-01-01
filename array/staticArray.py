@@ -8,7 +8,14 @@ def removeEnd(arr, length):
         arr[length - 1] = 0
 
 def insertMiddle(arr, n, i, length):
-    for index in range(length -1, i - 1, -1):
+    for index in range(length - 1, i - 1, -1):
         arr[index + 1] = arr[index]
 
     arr[i] = n
+def removeMiddle(arr, i, length):
+    for index in range(i + 1, length):
+        arr[index - 1] = arr[index]
+
+def printArr(arr, capacity):
+    for i in range(capacity):
+        print(arr[i])
