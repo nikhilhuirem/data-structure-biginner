@@ -12,6 +12,9 @@
     Each customer order (from either register) as it was finished by the kitchen. (served_orders)
 '''
 
+
+# in this code we take a time Complexity of O(1)  but Space complexity of O(n) because we use recursive function
+
 def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders)-> bool:
     # chech whether the served orders is empty if it is return true else contiue
     if len(served_orders) == 0:
@@ -36,3 +39,4 @@ take_out = [1, 3, 5]
 dine_inn = [2, 4, 6]
 served_order =  [1, 2, 4, 6, 3, 5]
 print(is_first_come_first_served(take_out, dine_inn, served_order))
+
