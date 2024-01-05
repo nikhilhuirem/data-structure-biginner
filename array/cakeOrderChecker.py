@@ -13,8 +13,8 @@
 '''
 
 
-# in this code we take a time Complexity of O(1)  but Space complexity of O(n) because we use recursive function
-
+# in this code we take a time Complexity of O(n^2)  but Space complexity of O(n^2) because we use recursive function and also see the array slicing
+'''
 def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders)-> bool:
     # chech whether the served orders is empty if it is return true else contiue
     if len(served_orders) == 0:
@@ -34,9 +34,31 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders)->
     # if first order in served order doesn't match the first in takeout and dine in orders hten we know it is not first come first serve
     else:
         return False
+'''
+
+
+
+
+# Now lets do the second approach
+
+def Fifo(take_out_orders, dine_in_orders, served_orders)-> bool:
+    take_out_order_index = 0
+    dine_in_order_index = 0
+    max_take_out_index = len(take_out_orders) - 1
+    max_dine_in_index = len(dine_in_orders) - 1
+
+    for order in served_orders:
+        if take_out_order_index <= max_take_out_index and take_out_orders[take_out_order_index] == order:
+            take_out_order_index += 1
+        elif dine_in_order_index <= max_dine_in_index and dine_in_orders[dine_in_order_index] == order:
+            dine_in_order_index += 1
+        else:
+            return False
+    if take_out_order_index != len(take_out_orders) or dine_in_order_index != len(dine_in_orders):
+        return False
+    return True
 
 take_out = [1, 3, 5]
 dine_inn = [2, 4, 6]
 served_order =  [1, 2, 4, 6, 3, 5]
-print(is_first_come_first_served(take_out, dine_inn, served_order))
-
+print(Fifo(take_out, dine_inn, served_order))
