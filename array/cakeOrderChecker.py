@@ -62,3 +62,4 @@ take_out = [1, 3, 5]
 dine_inn = [2, 4, 6]
 served_order =  [1, 2, 4, 6, 3, 5]
 print(Fifo(take_out, dine_inn, served_order))
+
