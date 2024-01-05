@@ -12,14 +12,27 @@
     Each customer order (from either register) as it was finished by the kitchen. (served_orders)
 '''
 
-def FIFO(t,d,s):
-    k=[]     
-    k1=[]     
-    for i in range(len(t)):         
-        k.append(s.index(t[i]))     
-        for j in range(len(d)):         
-            k1.append(s.index(d[i]))     
-            if sorted(k)==k and sorted(k1)==k1:         
-                return True     
-            return False  #main  print(FIFO([1,3,5],[2,4,6],[1,2,4,6,5,3])) print(FIFO([17,8,24],[12,19,2],[17,8,12,19,24,2])) 
-print(FIFO([1,3,5],[2,4,6],[1,2,4,6,5,3]))
+def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders)-> bool:
+    # chech whether the served orders is empty if it is return true else contiue
+    if len(served_orders) == 0:
+        return True
+    
+    # if the first order in served_order is same as the first order in take_out_orders
+    # make sure the take_out _orders is not empty
+    if len(take_out_orders) and served_orders[0] == take_out_orders[0]:
+        # take the first order off take_out-order and served_order and recurse
+        return is_first_come_first_served(take_out_orders[1:], dine_in_orders, served_orders[1:])
+
+    # if the first order in served_order is same as the first order in dine_in_orders 
+    # make sure the dine-in-orders is not empty
+    elif len(dine_in_orders) and served_orders[0] == dine_in_orders[0]:
+        # take the first order off dine-in-order and served_orders and recurse
+        return is_first_come_first_served(take_out_orders, dine_in_orders[1:],served_orders[1:])
+    # if first order in served order doesn't match the first in takeout and dine in orders hten we know it is not first come first serve
+    else:
+        return False
+
+take_out = [1, 3, 5]
+dine_inn = [2, 4, 6]
+served_order =  [1, 2, 4, 6, 3, 5]
+print(is_first_come_first_served(take_out, dine_inn, served_order))
