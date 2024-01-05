@@ -11,3 +11,15 @@
     The dine-in orders as they were entered into the system and given to the kitchen. (dine_in_orders)
     Each customer order (from either register) as it was finished by the kitchen. (served_orders)
 '''
+
+def FIFO(t,d,s):
+    k=[]     
+    k1=[]     
+    for i in range(len(t)):         
+        k.append(s.index(t[i]))     
+        for j in range(len(d)):         
+            k1.append(s.index(d[i]))     
+            if sorted(k)==k and sorted(k1)==k1:         
+                return True     
+            return False  #main  print(FIFO([1,3,5],[2,4,6],[1,2,4,6,5,3])) print(FIFO([17,8,24],[12,19,2],[17,8,12,19,24,2])) 
+print(FIFO([1,3,5],[2,4,6],[1,2,4,6,5,3]))
