@@ -118,3 +118,16 @@ class SinglyLinkedList:
             temp.next = before
             before = temp
             temp = after
+    
+    # another reverse example
+    def reverseNew(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
