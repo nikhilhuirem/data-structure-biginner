@@ -42,3 +42,16 @@ class CircularLL:
             temp.prev = None
         self.length -= 1
         return temp
+    
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.lenght == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+        self.lenght += 1
+        return True
+    
