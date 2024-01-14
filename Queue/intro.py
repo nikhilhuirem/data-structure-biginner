@@ -32,4 +32,19 @@ class Queue:
         self.last = new_node
         self.length = 1
 
+    def print(self):
+        temp = self.first
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
     
+    def enqueue(self, value)-> bool:
+        new_node = Node(value)
+        if self.length == 0:
+            self.first = None
+            self.last = None
+        else:
+            self.last.next = new_node
+            self.last = new_node
+        self.length += 1
+        return True
