@@ -1,3 +1,5 @@
+from intro import light_bulb_to_hours_of_light 
+
 class HashTable:
     def __init__(self, size = 7):
         self.data_map = [None] * size
