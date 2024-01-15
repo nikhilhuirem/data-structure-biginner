@@ -35,3 +35,8 @@ class Binary_Search_Tree:
             else:
                 return True
         return False
+    
+    def minimunNode(self, current_node):
+        while(current_node is not None):
+            current_node = current_node.left
+        return current_node
