@@ -21,3 +21,17 @@ def insert(array, newNum):
         array.append(newNum);
         for i in range((size//2)-1, -1, -1):
             heapify(array, size, i)
+
+def deleteNode(array, num):
+    size = len(array)
+    i = 0
+    for i in range(0, size):
+        if num == array[i]:
+            break
+        
+    array[i], array[size-1] = array[size-1], array[i]
+
+    array.remove(num)
+    
+    for i in range((len(array)//2)-1, -1, -1):
+        heapify(array, len(array), i)
