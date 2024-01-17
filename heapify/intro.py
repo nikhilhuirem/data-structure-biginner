@@ -12,3 +12,12 @@ def heapify(arr, n, i):
     if largest != i:
         arr[i],arr[largest] = arr[largest],arr[i]
         heapify(arr, n, largest)
+
+def insert(array, newNum):
+    size = len(array)
+    if size == 0:
+        array.append(newNum)
+    else:
+        array.append(newNum);
+        for i in range((size//2)-1, -1, -1):
+            heapify(array, size, i)
