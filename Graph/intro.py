@@ -28,6 +28,14 @@ class Graph:
                 pass
             return True
         return False
+    
+    def removeVertex(self, vertex):
+        if vertex in self.adj_list.keys():
+            for otherVertex in self.adj_list[vertex]:
+                self.adj_list[otherVertex].remove(vertex)
+            del self.adj_list[vertex]
+            return True
+        return False
 
 my_graph = Graph()
 my_graph.addVertex('A')
@@ -40,4 +48,5 @@ my_graph.addEdges('C','A')
 my_graph.addEdges('A','D')
 my_graph.printGraph()
 my_graph.removeEdge('A','D')
+my_graph.removeVertex("A")
 my_graph.printGraph()
