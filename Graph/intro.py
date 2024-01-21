@@ -11,6 +11,7 @@ class Graph:
             self.adj_list[vertex] = []
             return True
         return False
+    
     def addEdges(self, v1, v2)-> bool:
         if v1 in self.adj_list.keys() and v2 in self.adj_list.keys():
             self.adj_list[v1].append(v2)
@@ -18,10 +19,25 @@ class Graph:
             return True
         return False
     
+    def removeEdge(self, v1, v2)-> bool:
+        if v1 in self.adj_list.keys() and v2 in self.adj_list.keys():
+            try:
+                self.adj_list[v1].remove(v2)
+                self.adj_list[v2].remove(v1)
+            except ValueError:
+                pass
+            return True
+        return False
 
-g1  = Graph()
-g1.addVertex("A")
-g1.addVertex("B")
-g1.printGraph()
-g1.addEdges("A", "B")
-g1.printGraph()
+my_graph = Graph()
+my_graph.addVertex('A')
+my_graph.addVertex('B')
+my_graph.addVertex('C')
+my_graph.addVertex('D')
+my_graph.addEdges('A','B')
+my_graph.addEdges('B','C')
+my_graph.addEdges('C','A')
+my_graph.addEdges('A','D')
+my_graph.printGraph()
+my_graph.removeEdge('A','D')
+my_graph.printGraph()
