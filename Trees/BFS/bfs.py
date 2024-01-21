@@ -60,6 +60,39 @@ class BinarySearchTree:
                 queue.append(current_node.right)
         return results
 
+    def preOrderDFS(self):
+        results = []
+        def treverse(currentNode):
+            results.append(currentNode.value)
+            if currentNode.left is not None:
+                treverse(currentNode.left)
+            if currentNode.right is not None:
+                treverse(currentNode.right)
+        treverse(self.root)
+        return results
+
+    def postOrderDFS(self):
+        results = []
+        def treverse(currentNode):
+            if currentNode.left is not None:
+                treverse(currentNode.left)
+            if currentNode.right is not None:
+                treverse(currentNode.right)
+            results.append(currentNode.value)
+        treverse(self.root)
+        return results
+    
+    def inOrderDFS(self):
+        results = []
+        def treverse(currentNode):
+            if currentNode.left is not None:
+                treverse(currentNode.left)
+            results.append(currentNode.value)
+            if currentNode.right is not None:
+                treverse(currentNode.right)
+        treverse(self.root)
+        return results
+    
 my_tree = BinarySearchTree()
 my_tree.insert(47)
 my_tree.insert(21)
@@ -68,4 +101,7 @@ my_tree.insert(18)
 my_tree.insert(27)
 my_tree.insert(52)
 my_tree.insert(82)
-print(my_tree.BFS())
+print("BFS: ",my_tree.BFS())
+print("Pre order DFS: ",my_tree.preOrderDFS())
+print("Post order DFS: ",my_tree.postOrderDFS())
+print("In order DFS: ",my_tree.inOrderDFS())
