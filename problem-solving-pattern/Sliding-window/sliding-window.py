@@ -22,7 +22,7 @@ def slidingWindow(arr, k):
     currentSum = 0
 
     for i in range(k):
-        print(i)
+        #print(i)
         currentSum = currentSum + arr[i]
     maxSum = currentSum
     for i in range(k, len(arr)):
