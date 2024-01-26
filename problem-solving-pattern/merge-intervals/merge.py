@@ -14,3 +14,8 @@
 
     this will take a time complexity of O(nlogn)
 '''
+
+def mergeIntervals(arr, s):
+    if s <= 0:
+        return 
+    
