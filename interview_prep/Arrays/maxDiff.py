@@ -14,6 +14,7 @@ def getMaximumDifference(arr: List[int], size: int)-> int:
                 maxDiffSoFar = currentdiff
     return maxDiffSoFar
 
-arr = [4,3,10,2,9,1,6]
+# arr = [4,3,10,2,9,1,6]
+arr = [3,1,4,7,5,100,10]
 size = len(arr)
 print(f"Max Differece in the given array is", getMaximumDifference(arr, size))
