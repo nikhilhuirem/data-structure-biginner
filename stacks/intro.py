@@ -47,3 +47,12 @@ class Stack:
             self.top = self.top.next
             temp.next = None
         self.height -= 1
+
+
+class Stack:
+    def __init__(self):
+        self.values = []
+    def push(self, x):
+        self.values = [x] + self.values
+    def pop(self):
+        return self.values.pop(0)
