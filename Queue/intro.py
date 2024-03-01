@@ -61,3 +61,14 @@ class Queue:
             self.first.next = None
         self.length -= 1
         return temp
+
+
+class Queue:
+    def __init__(self):
+        self.value = []
+    def enque(self,x):
+        self.value.append(x)
+    def deque(self):
+        front =  self.value[0]
+        self.value = self.value[1:]
+        return front
