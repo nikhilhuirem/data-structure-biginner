@@ -24,3 +24,7 @@ int main() {
     x = *p++->c;
     */
 }
+
+/* There are three types of storage class -> Static, extern, register
+    register -> Store in the register, dont store variable in the register u can store address of a variacle in the register.
+*/
