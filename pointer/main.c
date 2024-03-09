@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<stdlib.h>
 struct node
 {
     /* data */
@@ -28,3 +28,15 @@ int main() {
 /* There are three types of storage class -> Static, extern, register
     register -> Store in the register, dont store variable in the register u can store address of a variacle in the register.
 */
+
+
+
+struct node
+{
+    /* data */
+    int i;
+    struct node *l;
+};
+
+struct node *p;
+p = (struct node *)malloc(sizeof(struct node));
