@@ -17,6 +17,23 @@ void print_list(struct node *head) {
     }
 }
 
+void insertAtBegining(struct node *head) {
+    struct node *new = (struct node *)malloc(sizeof(struct node));
+    new->link = head;
+    head = new; 
+}
+
+void insertAtEnd(struct node *head) {
+    struct node *new = (struct node *)malloc(sizeof(struct node));
+    struct node *t;
+    t = head;
+    while(t->link != NULL) {
+        t = t->link;
+    }
+    t->link = new;
+    new->link = NULL;
+}   
+
 int main(void) 
 {
     struct node *head;
