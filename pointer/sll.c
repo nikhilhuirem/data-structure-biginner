@@ -38,5 +38,5 @@ int main(void)
 {
     struct node *head;
     struct node *p;
-    head = (struct node *)malloc(sizeof(struct node));
+    head = (struct node *)malloc(sizeof(struct node)); // this will not work
 }
