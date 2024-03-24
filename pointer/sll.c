@@ -65,4 +65,3 @@ int main(void)
 }
 
 //All about singly linked list
-//Add other functions also
